@@ -46,6 +46,7 @@ WantedBy=multi-user.target
 ################################
 
 sudo systemctl  daemon-reload
+
 sudo systemctl  start etcd.service
 
 sudo systemctl enable etcd.service
@@ -53,5 +54,7 @@ sudo systemctl enable etcd.service
 systemctl status etcd.service
 
  ss -tunelp | grep 2379
+ 
  etcdctl member list
+ 
  etcdctl  endpoint health
