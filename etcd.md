@@ -58,3 +58,17 @@ systemctl status etcd.service
  etcdctl member list
  
  etcdctl  endpoint health
+
+
+ETCD Data store: -> /var/lib/etcd 
+
+etcd put course="ramvalue"
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify --insecure-transport=false --cert /root/newcertificates/client.crt --key /root/newcertificates/client.key get course
+
+
+to generate public/private key pair, use ssh-keygen
+
+netstat -ntlp
+
+tcpdump -i lo -X port 2379
